@@ -37,7 +37,7 @@ body {
 
 /* controls */
 .controls {
-    background-color: yellow;
+    background: none;
 }
 /* counter */
 .counter {
