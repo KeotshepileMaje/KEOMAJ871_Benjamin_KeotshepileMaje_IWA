@@ -1,3 +1,4 @@
-export const firstname = "Alex"
-export const surname = "Naidoo"
-export const role = "Head of Marketing"
+export const firstname3 = "Alex"
+export const surname3 = "Naidoo"
+export const role3 = "Head of Marketing"
+

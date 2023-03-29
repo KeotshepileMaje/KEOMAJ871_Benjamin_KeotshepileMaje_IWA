@@ -1,13 +1,14 @@
-import {firstname, surname, role} from './alex.js'
-// import {fistname1, surname1, role1} from './johannes.js'
-// import {fistname, surname, role, firstname} from './nwabisa.js'
+import {firstname3, surname3, role3} from './alex.js'
+import {firstname2, surname2, role2} from './johannes.js'
+import {firstname, surname, role} from './nwabisa.js'
 
-console.log(firstname,surname, role)
+const display3 = firstname3 + " " + surname3 + " (" + role3 + ")"
+document.querySelector('#alex').innerText = display3
+
+const display2 = firstname2 + " " + surname2 + " (" + role2 + ")"
+document.querySelector('#johannes').innerText = display2
+
 const display= firstname + " " + surname + " (" + role + ")"
-document.querySelector('#alex').innerText = display
+document.querySelector('#nwabisa').innerText = display
 
-// const display= firstname + " " + surname + " (" + role + ")"
-// document.querySelector('#johannes').innerText = display
-
-// private display= firstname + " " + surname + " (" + role + ")"
-// document.querySelector('#nwabisa').innerText = display
+console.log("Roles:", role, ",",role2,",", role3)
