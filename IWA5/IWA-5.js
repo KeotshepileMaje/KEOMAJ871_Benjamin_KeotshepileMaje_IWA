@@ -2,12 +2,13 @@ const FREE_WARNING = 'Free shipping only applies to single customer orders'
 const BANNED_WARNING = 'Unfortunately we do not ship to your country of residence'
 const NONE_SELECTED = 0
 
-let getlocation = "t4";
+//Gloabal variables
+let getlocation = "RSA";
 let currency;
 let shipping; 
 const customers = 1
 
-
+//Buying conditions
 if (getlocation === 'RSA') { 
 	shipping = 400
 	currency = 'R'
@@ -21,18 +22,26 @@ if (getlocation === 'NAM'){
 	currency = "$"
 }
 
-shoes = 300 * 1
-toys = 100 * 5
-shirts = 150 * NONE_SELECTED
-batteries = 35 * 2
-pens = 5 * NONE_SELECTED 
+//Items to buy
+const shoes = 300 * 1
+const toys = 100 * 5
+const shirts = 150 * NONE_SELECTED
+const batteries = 35 * 2
+const pens = 5 * NONE_SELECTED 
 
-if ( ( (shoes + toys + batteries + pens + shirts) >= 1000 && currency === 'R' && customers === 1) ||
-	 ( (shoes + toys + batteries + pens + shirts) >= 60 && currency === '$' && customers === 1 )
-	 ) {
-		shipping = 0
-		}
+//Delivery conditions
+if ( ( (shoes + toys + batteries + pens + shirts) >= 1000 && 
+	(currency === 'R') && (customers === 1) && 
+	(getlocation === ('NAM' || 'RSA')) ) 
+        ||
+	( (shoes + toys + batteries + pens + shirts) >= 60 && (currency === '$') &&(customers === 1) && 
+	(getlocation === ('NAM' || 'RSA')) ) ){
+	shipping = 0
+	} 
 
+/*Buying conditions and 
+ *Total price for items on the cart
+ */
 if ((customers !== 1)) { console.log(FREE_WARNING) }
 
 if (getlocation === 'NK') {
