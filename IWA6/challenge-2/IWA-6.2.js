@@ -3,21 +3,14 @@ const tax = '12%';
 const food = 51.7501;
 const salary = 800;
 const transport = 10.2;
-const hourOfDay = 00; 
+const hourOfDay = 00;
 const minuteOfDay = 00;
 
 // Only change below this line
 
 if ( (hourOfDay === 00) && (minuteOfDay === 00)) {
     const taxAsDecimal =  parseFloat(tax) /100
-    console.log(taxAsDecimal)
     const startingAfterTax = salary - (salary * taxAsDecimal)
-    console.log(startingAfterTax)
     const  Balance = startingAfterTax - transport - food - rent
-    console.log(Balance)
-   }
-
-if (hourOfDay === null || minuteOfDay === null ) {
-    
-}
-	
+    console.log('R', Balance.toFixed(2))
+   } 
