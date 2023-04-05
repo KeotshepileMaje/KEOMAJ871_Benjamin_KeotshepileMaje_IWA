@@ -3,7 +3,7 @@ const secondaryPhone = '0219131568'
 
 // Only change below this line
 
-const  onlyNumbers = /^[0-9]+$/
+const  onlyNumbers = /^[0-9]+$/ //This regular expression matches any string that consists of only digits from 0-9 and nothing else.
 const primaryValid = onlyNumbers.test(primaryPhone)
 const secondaryValid = onlyNumbers.test(secondaryPhone)
 
