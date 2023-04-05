@@ -14,3 +14,7 @@ if ( (hourOfDay === 00) && (minuteOfDay === 00)) {
     const  Balance = startingAfterTax - transport - food - rent
     console.log('R', Balance.toFixed(2))
    } 
+
+// .toFixed() --> fix the number of decimal digit to the number written inside the brakets.
+// ParseFloat() -->It parses a string and returns a number.
+// parseInt() -->It  parses a string an returns a whole number.
