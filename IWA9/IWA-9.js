@@ -35,3 +35,10 @@ const type = rent[`${size}-${lodging}`] //(`${size}-${lodging}`) is the same as 
 const balance = startingAfterTax - expenses.transport - expenses.food - type
 
 console.log(`R ${balance.toFixed(2)}`)
+/*Method 2*/
+// const taxAsDecimal = parseFloat(tax[913]) / 100
+// const startingAfterTax = salary - salary * taxAsDecimal //Tax amount minused from the salary
+// const type = `${size}-${lodging}` //(`${size}-${lodging}`) is the same as 'large-apartment'.
+// const balance = startingAfterTax - expenses.transport - expenses.food - rent[type]
+
+// console.log(`R ${balance.toFixed(2)}`)

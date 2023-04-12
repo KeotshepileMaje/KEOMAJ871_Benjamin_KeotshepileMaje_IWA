@@ -19,6 +19,6 @@ const total = `Total amount owed: R ${owed.toFixed(2)}`
 const result = `\n${leo} \n${sarah} \n${divider} \n${total} \n${divider} `
 console.log(result)
 
-
-
-
+// const leoOwed = parseFloat(leoBalance) * -1
+// const sarahOwed = parseFloat(sarahBalance) * -1
+// const totalOwed = leoOwed + sarahOwed
