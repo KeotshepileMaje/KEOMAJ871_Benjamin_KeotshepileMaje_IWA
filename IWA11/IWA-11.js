@@ -1,33 +1,73 @@
+const Root_1 = document.querySelector('[data-key="order1"]');
+const Biscuits_1 = Root_1.querySelector('.biscuits .count');
+const Donuts_1 = Root_1.querySelector('.donuts .count');
+const Pancakes_1 = Root_1.querySelector('.pancakes .count');
+const Status_1 = Root_1.querySelector('.status dd');
 
-const 1-root = document(order1),
-const 1-biscuits: document(biscuits),
-const 1-donuts: document(donuts),
-const 1-pancakes: document(pancakes),
-const 1-status: document(status)
+Biscuits_1.textContent = Root_1.getAttribute('data-biscuits');
+Donuts_1.textContent = Root_1.getAttribute('data-donuts');
+Pancakes_1.textContent = Root_1.getAttribute('data-pancakes');
+Status_1.textContent = Root_1.getAttribute('data-delivered') === 'true' ? 'Delivered' : 'Pending';
 
-const 2-root = document(order2),
-const 2-biscuits: document(biscuits),
-const 2-donuts: document(donuts),
-const 2-pancakes: document(pancakes),
-const 2-status: document(status)
+const Root_2 = document.querySelector('[data-key="order2"]');
+const Biscuits_2 = Root_2.querySelector('.biscuits .count');
+const Donuts_2 = Root_2.querySelector('.donuts .count');
+const Pancakes_2 = Root_2.querySelector('.pancakes .count');
+const Status_2 = Root_2.querySelector('.status dd');
 
-const 3-root = document(order3),
-const 3-biscuits: document(biscuits),
-const 3-donuts: document(donuts),
-const 3-pancakes: document(pancakes),
-const 3-status: document(status)
+Biscuits_2.textContent = Root_2.getAttribute('data-biscuits');
+Donuts_2.textContent = Root_2.getAttribute('data-donuts');
+Pancakes_2.textContent = Root_2.getAttribute('data-pancakes');
+Status_2.textContent = Root_2.getAttribute('data-delivered') === 'true' ? 'Delivered' : 'Pending';
 
-1-biscuits= 1-root.biscuits,
-1-donuts = 1-root.donuts,
-1-pancakes = 1-root.pancakes,
-1-status = 1-root.status ? Delivered : Pending
+const Root_3 = document.querySelector('[data-key="order3"]');
+const Biscuits_3 = Root_3.querySelector('.biscuits .count');
+const Donuts_3 = Root_3.querySelector('.donuts .count');
+const Pancakes_3 = Root_3.querySelector('.pancakes .count');
+const Status_3 = Root_3.querySelector('.status dd');
 
-2-biscuits= 2-root.biscuits,
-2-donuts = 2-root.donuts,
-2-pancakes = 2-root.pancakes,
-2-status = 2-root.status ? Delivered : Pending
+Biscuits_3.textContent = Root_3.getAttribute('data-biscuits');
+Donuts_3.textContent = Root_3.getAttribute('data-donuts');
+Pancakes_3.textContent = Root_3.getAttribute('data-pancakes');
+Status_3.textContent = Root_3.getAttribute('data-delivered') === 'true' ? 'Delivered' : 'Pending';
 
-3-biscuits= 3-root.biscuits,
-3-donuts = 3-root.donuts,
-3-pancakes = 3-root.pancakes,
-3-status = 3-root.status ? Delivered : Pending
+
+/*--------------------------*/
+
+
+/*
+ *Method 2
+ *Solution from Chatgpt
+*/
+// // script.js
+
+// // Select all <dl> elements on the page.
+// const orders = document.querySelectorAll('dl');
+
+// // Loop over each <dl> element.
+// orders.forEach((order) => {
+//   // Get the data attributes for this order.
+//   const key = order.dataset.key;
+
+//   const biscuits = order.dataset.biscuits;
+
+//   const biscuitsElement = order.querySelector('.biscuits .count');
+//   biscuitsElement.textContent = biscuits;
+
+//   const donuts = order.dataset.donuts;
+
+//   const donutsElement = order.querySelector('.donuts .count');
+//   donutsElement.textContent = donuts;
+
+//   const pancakes = order.dataset.pancakes;
+
+//   const pancakesElement = order.querySelector('.pancakes .count');
+//   pancakesElement.textContent = pancakes;
+
+//   const delivered = order.dataset.delivered;
+
+//   const statusElement = order.querySelector('.status dd');
+//   statusElement.textContent = delivered ? 'Delivered' : 'Pending';
+// })
+
+
