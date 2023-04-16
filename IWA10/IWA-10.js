@@ -4,7 +4,7 @@ const holidays = {
     0: {
         id: 0,
         name: 'Day of Reconciliation',
-        date: new Date(`16 December ${currentYear}`),
+        date: `16 December ${currentYear}`,
     },
     1: {
         id: 1,
@@ -53,60 +53,51 @@ const futureId = 9
 
 // Do not change code above this comment
 
-//console.log( holidays[futureId] ? holidays[futureId].name : `ID ${futureId} not created yet`)
+console.log( holidays[futureId] ? holidays[futureId].name : `ID ${futureId} not created yet`)
 
 let copied = holidays[6]
     copied.name = 'X-mas Day'
 
-const correctDate = copied.date
-//console.log(correctDate)
-//console.log('--------------------------------------------')
-
+const correctDate = new Date(copied.date)
 correctDate.setHours(00)
 correctDate.setMinutes(00)
-isEarlier = correctDate == holidays[6].date
+isEarlier = correctDate.getTime() < holidays[6].date.getTime()
 console.log('New date is earlier:', isEarlier)
 
-
- if (isEarlier) {copied.date = correctDate}
- console.log(isEarlier)
-console.log('ID change:', holidays[6].id == copied.id )
+if (isEarlier) { 
+console.log('ID change:', holidays[6].id != copied.id )
 console.log('Name change:', holidays[6].name != copied.name || copied.name)
 console.log('Date change:', holidays[6].date != copied.date || copied.date)
+}
 
 
-const firstHolidayTimestamp = Math.min(
-    holidays[0].date.getTime(),
-    holidays[1].date.getTime(),
-    holidays[2].date.getTime(),
-    holidays[3].date.getTime(),
-    holidays[4].date.getTime(),
-    holidays[5].date.getTime(),
-    holidays[6].date.getTime(),
-    holidays[7].date.getTime(),
-    holidays[8].date.getTime(),
-    )
-console.log(firstHolidayTimestamp)
-const lastHolidayTimestamp = Math.max(
-    holidays[0].date.getTime(),
-    holidays[1].date.getTime(),
-    holidays[2].date.getTime(),
-    holidays[3].date.getTime(),
-    holidays[4].date.getTime(),
-    holidays[5].date.getTime(),
-    holidays[6].date.getTime(),
-    holidays[7].date.getTime(),
-    holidays[8].date.getTime(),
-)
-console.log(lastHolidayTimestamp)
+/*
+ *https://stackoverflow.com/questions/7143399/min-max-of-dates-in-an-array
+ *Method used here still tobe studied
+*/
+let dates = []
+    dates.push(new Date(holidays[0].date))
+    dates.push(new Date(holidays[1].date))
+    dates.push(new Date(holidays[2].date))
+    dates.push(new Date(holidays[3].date))
+    dates.push(new Date(holidays[4].date))
+    dates.push(new Date(holidays[5].date))
+    dates.push(new Date(holidays[6].date))
+    dates.push(new Date(holidays[7].date))
+    dates.push(new Date(holidays[8].date))
 
-const firstDay = firstHolidayTimestamp.getDate
-const firstMonth = firstHolidayTimestamp.getMonth
-const lastDay = lastHolidayTimestamp.getDate
-const lastMonth = lastHolidayTimestamp.getMonth
+    let minDate=new Date(Math.min.apply(null,dates));
+    console.log(minDate)
+    let maxDate=new Date(Math.max.apply(null,dates));
+    console.log(maxDate)
 
-console.log('{firstDay}/{firstMonth}/{currentYear}')
-console.log('{lastDay}/{lastMonth}/{currentYear}')
+const firstDay = minDate.getDate()
+const firstMonth = minDate.getMonth()
+const lastDay = maxDate.getDate()
+const lastMonth = maxDate.getMonth()
 
-//const randomHoliday = holidays[Math.random]
-//console.log(randomHoliday.date)
+console.log(`${firstDay}/${firstMonth}/${currentYear}`)
+console.log(`${lastDay}/${lastMonth}/${currentYear}`)
+
+const randomHoliday = holidays[Math.floor(Math.random())];
+console.log(randomHoliday);
