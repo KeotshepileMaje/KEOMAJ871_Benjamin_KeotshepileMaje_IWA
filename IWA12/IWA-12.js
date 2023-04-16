@@ -26,7 +26,6 @@ const STATUS_MAP = {
 }
 
 // Edit below line 
-// Get references to DOM elements
 
 const book1 = document.querySelector("#book1");
 
@@ -40,9 +39,9 @@ checkout1.enabled = STATUS_MAP.overdue.canCheckout;
 checkin1.enabled = STATUS_MAP.overdue.canCheckIn;
 status1.style.color = STATUS_MAP.overdue.color;
 
-reserve1.style.color = reserve1.enabled ? "gray" : "black";
-checkout1.style.color = checkout1.enabled ? "gray" : "black";
-checkin1.style.color = checkin1.enabled ? "gray" : "black";
+reserve1.style.color = reserve1.enabled ? "black" : "gray";
+checkout1.style.color = checkout1.enabled ? "black" : "gray";
+checkin1.style.color = checkin1.enabled ? "black" : "gray";
 
 const book2 = document.querySelector("#book2");
 
@@ -56,9 +55,9 @@ checkout2.enabled = STATUS_MAP.reserved.canCheckout;
 checkin2.enabled = STATUS_MAP.reserved.canCheckIn;
 status2.style.color = STATUS_MAP.reserved.color;
 
-reserve2.style.color = reserve2.enabled ? "gray" : "black";
-checkout2.style.color = checkout2.enabled ? "gray" : "black";
-checkin2.style.color = checkin2.enabled ? "gray" : "black";
+reserve2.style.color = reserve2.enabled ? "black" : "gray";
+checkout2.style.color = checkout2.enabled ? "black" : "gray";
+checkin2.style.color = checkin2.enabled ? "black" : "gray";
 
 const book3 = document.querySelector("#book3");
 
@@ -72,9 +71,9 @@ checkout3.enabled = STATUS_MAP.shelf.canCheckout;
 checkin3.enabled = STATUS_MAP.shelf.canCheckIn;
 status3.style.color = STATUS_MAP.shelf.color;
 
-reserve3.style.color = reserve3.enabled ? "gray" : "black";
-checkout3.style.color = checkout3.enabled ? "gray" : "black";
-checkin3.style.color = checkin3.enabled ? "gray" : "black";
+reserve3.style.color = reserve3.enabled ? "black" : "gray";
+checkout3.style.color = checkout3.enabled ? "black" : "gray";
+checkin3.style.color = checkin3.enabled ? "black" : "gray";
 
 
 
