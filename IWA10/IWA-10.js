@@ -55,20 +55,34 @@ const futureId = 9
 
 console.log( holidays[futureId] ? holidays[futureId].name : `ID ${futureId} not created yet`)
 
-let copied = holidays[6]
-    copied.name = 'X-mas Day'
+// let copied = holidays[6]
+//     copied.name = 'X-mas Day'
 
+// const correctDate = new Date(copied.date)
+// correctDate.setHours(00)
+// correctDate.setMinutes(00)
+// isEarlier = correctDate.getTime() < holidays[6].date.getTime()
+// console.log('New date is earlier:', isEarlier)
+
+// if (isEarlier) { 
+// console.log('ID change:', holidays[6].id != copied.id )
+// console.log('Name change:', holidays[6].name)
+// console.log('Date change:', holidays[6].date.toLocaleDateString('en-GB'))
+// }
+
+//methods from coach
+const copied = {
+    id: holidays[christmas ].id,
+    name: holidays[christmas ].name,
+    date: new Date(holidays[christmas ].date.getTime()),
+    }
 const correctDate = new Date(copied.date)
 correctDate.setHours(00)
 correctDate.setMinutes(00)
-isEarlier = correctDate.getTime() < holidays[6].date.getTime()
+const isEarlier = correctDate < holidays[christmas].date 
 console.log('New date is earlier:', isEarlier)
+if (isEarlier) copied.date = correctDate
 
-if (isEarlier) { 
-console.log('ID change:', holidays[6].id != copied.id )
-console.log('Name change:', holidays[6].name != copied.name || copied.name)
-console.log('Date change:', holidays[6].date != copied.date || copied.date)
-}
 
 
 /*
@@ -87,9 +101,9 @@ let dates = []
     dates.push(new Date(holidays[8].date))
 
     let minDate=new Date(Math.min.apply(null,dates));
-    console.log(minDate)
+    console.log(`First Holiday :${minDate.toLocaleDateString('en-GB')}`)
     let maxDate=new Date(Math.max.apply(null,dates));
-    console.log(maxDate)
+    console.log(`Last Holiday :${maxDate.toLocaleDateString('en-GB')}`)
 
 const firstDay = minDate.getDate()
 const firstMonth = minDate.getMonth()
@@ -99,5 +113,7 @@ const lastMonth = maxDate.getMonth()
 console.log(`${firstDay}/${firstMonth}/${currentYear}`)
 console.log(`${lastDay}/${lastMonth}/${currentYear}`)
 
-const randomHoliday = holidays[Math.floor(Math.random())];
+const randomHoliday = holidays[Math.floor(Math.random()*8)];
 console.log(randomHoliday);
+// const randomHoliday = holidays[Math.round(Math.random() * 8)].date
+// console.log(randomHoliday);
