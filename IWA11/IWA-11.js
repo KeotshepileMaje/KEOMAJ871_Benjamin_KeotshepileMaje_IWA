@@ -2,7 +2,7 @@ const Root_1 = document.querySelector('[data-key="order1"]');
 const Biscuits_1 = Root_1.querySelector('.biscuits .count');
 const Donuts_1 = Root_1.querySelector('.donuts .count');
 const Pancakes_1 = Root_1.querySelector('.pancakes .count');
-const Status_1 = Root_1.querySelector('.status dd');
+const Status_1 = Root_1.querySelector('.status > dd');
 
 Biscuits_1.textContent = Root_1.getAttribute('data-biscuits');
 Donuts_1.textContent = Root_1.getAttribute('data-donuts');
@@ -13,7 +13,7 @@ const Root_2 = document.querySelector('[data-key="order2"]');
 const Biscuits_2 = Root_2.querySelector('.biscuits .count');
 const Donuts_2 = Root_2.querySelector('.donuts .count');
 const Pancakes_2 = Root_2.querySelector('.pancakes .count');
-const Status_2 = Root_2.querySelector('.status dd');
+const Status_2 = Root_2.querySelector('.status > dd');
 
 Biscuits_2.textContent = Root_2.getAttribute('data-biscuits');
 Donuts_2.textContent = Root_2.getAttribute('data-donuts');
@@ -24,7 +24,7 @@ const Root_3 = document.querySelector('[data-key="order3"]');
 const Biscuits_3 = Root_3.querySelector('.biscuits .count');
 const Donuts_3 = Root_3.querySelector('.donuts .count');
 const Pancakes_3 = Root_3.querySelector('.pancakes .count');
-const Status_3 = Root_3.querySelector('.status dd');
+const Status_3 = Root_3.querySelector('.status > dd');
 
 Biscuits_3.textContent = Root_3.getAttribute('data-biscuits');
 Donuts_3.textContent = Root_3.getAttribute('data-donuts');
