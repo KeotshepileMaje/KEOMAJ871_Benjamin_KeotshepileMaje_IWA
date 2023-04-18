@@ -8,8 +8,7 @@ let calculated = '1'
 const logCalc = () => { 
     const isString = typeof calculated == 'string' 
     let calculatedAsNumber = isString ? parseInt(calculated) : calculated
-    console.log(calculatedAsNumber)
-    calculated = calculatedAsNumber + 6 ;
+    calculated = calculatedAsNumber + 2 ;
 }
 
 const calcUser = () => {  
@@ -17,35 +16,34 @@ const calcUser = () => {
   if (calculated >= 2) {
       user = 'John'
       state = 'requesting'
-      console.log('great')
+      //console.log('great')
       } 
   if (calculated > 3) { 
       state = 'idle'
-      console.log('oih')
+      //console.log('oih')
 }
 }
-calcUser()
 
 const checkUser = () => {
   calcUser()
-	if (user && state === 'requesting') {
+	if ( user && state === 'requesting') {
 		console.log(`User: ${user} (${calculated})`)
 	}
 }
-
-// Only allowed to change code above
-
 // checkUser()
-// calcUser()
+// //Only allowed to change code above
 
-// checkUser()
-// calcUser()
+checkUser()
+calcUser()
 
-// checkUser()
-// calcUser()
+checkUser()
+calcUser()
 
-// checkUser()
-// calcUser()
+checkUser()
+calcUser()
 
-// checkUser()
-// calcUser()
+checkUser()
+calcUser()
+
+checkUser()
+calcUser()
