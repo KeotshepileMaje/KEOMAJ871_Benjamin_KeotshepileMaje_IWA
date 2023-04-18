@@ -20,6 +20,3 @@ surname = 'Smith'
 console.log(user; surname;)
 Answers:
 The first line has has an error. The comment tags are used incorrectly.
-
-E
-
