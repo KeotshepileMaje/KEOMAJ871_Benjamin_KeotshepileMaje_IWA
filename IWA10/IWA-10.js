@@ -55,33 +55,33 @@ const futureId = 9
 
 console.log( holidays[futureId] ? holidays[futureId].name : `ID ${futureId} not created yet`)
 
-// let copied = holidays[6]
-//     copied.name = 'X-mas Day'
+let copied = holidays[6]
+    copied.name = 'X-mas Day'
 
-// const correctDate = new Date(copied.date)
-// correctDate.setHours(00)
-// correctDate.setMinutes(00)
-// isEarlier = correctDate.getTime() < holidays[6].date.getTime()
-// console.log('New date is earlier:', isEarlier)
-
-// if (isEarlier) { 
-// console.log('ID change:', holidays[6].id != copied.id )
-// console.log('Name change:', holidays[6].name)
-// console.log('Date change:', holidays[6].date.toLocaleDateString('en-GB'))
-// }
-
-//methods from coach
-const copied = {
-    id: holidays[christmas ].id,
-    name: holidays[christmas ].name,
-    date: new Date(holidays[christmas ].date.getTime()),
-    }
 const correctDate = new Date(copied.date)
 correctDate.setHours(00)
 correctDate.setMinutes(00)
-const isEarlier = correctDate < holidays[christmas].date 
+isEarlier = correctDate.getTime() < holidays[6].date.getTime()
 console.log('New date is earlier:', isEarlier)
-if (isEarlier) copied.date = correctDate
+
+if (isEarlier) { 
+console.log('ID change:', holidays[6].id != copied.id )
+console.log('Name change:', holidays[6].name)
+console.log('Date change:', holidays[6].date.toLocaleDateString('en-GB'))
+}
+
+//methods from coach
+// const copied = {
+//     id: holidays[christmas ].id,
+//     name: holidays[christmas ].name,
+//     date: new Date(holidays[christmas ].date.getTime()),
+//     }
+// const correctDate = new Date(copied.date)
+// correctDate.setHours(00)
+// correctDate.setMinutes(00)
+// const isEarlier = correctDate < holidays[christmas].date 
+// console.log('New date is earlier:', isEarlier)
+// if (isEarlier) copied.date = correctDate
 
 
 
@@ -100,15 +100,15 @@ let dates = []
     dates.push(new Date(holidays[7].date))
     dates.push(new Date(holidays[8].date))
 
-    let minDate=new Date(Math.min.apply(null,dates));
+    let minDate = new Date(Math.min.apply(null,dates));
     console.log(`First Holiday :${minDate.toLocaleDateString('en-GB')}`)
-    let maxDate=new Date(Math.max.apply(null,dates));
+    let maxDate = new Date(Math.max.apply(null,dates));
     console.log(`Last Holiday :${maxDate.toLocaleDateString('en-GB')}`)
 
-const firstDay = minDate.getDate()
-const firstMonth = minDate.getMonth()
+const firstDay = minDate.getDate().toString().padStart(2, 0)
+const firstMonth = (minDate.getMonth()+1).toString().padStart(2, 0)
 const lastDay = maxDate.getDate()
-const lastMonth = maxDate.getMonth()
+const lastMonth = (maxDate.getMonth()+1).toString().padStart(2, 0)
 
 console.log(`${firstDay}/${firstMonth}/${currentYear}`)
 console.log(`${lastDay}/${lastMonth}/${currentYear}`)
@@ -117,3 +117,25 @@ const randomHoliday = holidays[Math.floor(Math.random()*8)];
 console.log(randomHoliday);
 // const randomHoliday = holidays[Math.round(Math.random() * 8)].date
 // console.log(randomHoliday);
+
+
+// const firstHolidayTimestamp = Math.min( 
+//         new Date(holidays[0].date).getTime(),
+//         new Date(holidays[1].date).getTime(),
+//         new Date(holidays[2].date).getTime(),
+//         new Date(holidays[3].date).getTime(),
+//         new Date(holidays[4].date).getTime(),
+//         new Date(holidays[5].date).getTime(),
+//         new Date(holidays[6].date).getTime(),
+//         new Date(holidays[7].date).getTime(),
+//         new Date(holidays[8].date).getTime(), ) 
+// const lastHolidayTimestamp = Math.max(
+//         new Date(holidays[0].date).getTime(), 
+//         new Date(holidays[1].date).getTime(), 
+//         new Date(holidays[2].date).getTime(),
+//         new Date(holidays[3].date).getTime(),
+//         new Date(holidays[4].date).getTime(),
+//         new Date(holidays[5].date).getTime(),
+//         new Date(holidays[6].date).getTime(),
+//         new Date(holidays[7].date).getTime(),
+//         new Date(holidays[8].date).getTime(), )
