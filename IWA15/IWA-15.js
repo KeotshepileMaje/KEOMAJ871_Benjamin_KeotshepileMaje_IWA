@@ -1,3 +1,4 @@
+
 // scripts.js
 
 const data = {
@@ -10,23 +11,28 @@ const data = {
 
 // Only edit below
 
-const { first = 1 } = data.first || {}
-const { second = 1 } = data.second || {}
-const { third = 1 } = data.third || {}
+const firstList = data.lists[0][1]
+const secondList = data.lists[1][1]
+const thirdList = data.lists[2][1]
 
 const result = []
 
 const extractBiggest = () => {
-	if (first[-1] > second[-1]) {
-		return first
-	}
+	const lastOfFirst = firstList[firstList.length-1]
+	const lastOfSecond = secondList[secondList.length-1]
+	const lastOfThird = thirdList[thirdList.length-1]
 
-	if (third[-1] < 1) {
-		return second
-	}
-	
-	return third
+	if (lastOfFirst > lastOfSecond && lastOfFirst > lastOfThird) {
+		return firstList.pop()	
+	};
+	if (lastOfSecond > lastOfFirst && lastOfSecond > lastOfThird) {
+		return secondList.pop()
+	 };
+    if (lastOfThird > lastOfFirst && lastOfThird > lastOfSecond)  {
+	    return thirdList.pop()
+	};
 }
+
 
 // Only edit above
 
@@ -35,6 +41,8 @@ result.push(extractBiggest())
 result.push(extractBiggest())
 result.push(extractBiggest())
 result.push(extractBiggest())
+
+//console.log(result)
 
 result.push(extractBiggest())
 result.push(extractBiggest())
@@ -49,3 +57,5 @@ result.push(extractBiggest())
 result.push(extractBiggest())
 
 console.log(result)
+
+
