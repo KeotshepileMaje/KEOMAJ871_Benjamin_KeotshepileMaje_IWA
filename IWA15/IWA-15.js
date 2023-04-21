@@ -25,10 +25,10 @@ const extractBiggest = () => {
 	if (lastOfFirst > lastOfSecond && lastOfFirst > lastOfThird) {
 		return firstList.pop()	
 	};
-	if (lastOfSecond > lastOfFirst && lastOfSecond > lastOfThird) {
+	if ( lastOfSecond > lastOfThird) {
 		return secondList.pop()
-	 };
-    if (lastOfThird > lastOfFirst && lastOfThird > lastOfSecond)  {
+	 }
+    else {
 	    return thirdList.pop()
 	};
 }
@@ -59,3 +59,19 @@ result.push(extractBiggest())
 console.log(result)
 
 
+/* Ask coach why this can't work */
+// const extractBiggest = () => {
+// 	const lastOfFirst = firstList[firstList.length-1]
+// 	const lastOfSecond = secondList[secondList.length-1]
+// 	const lastOfThird = thirdList[thirdList.length-1]
+
+// 	if (lastOfFirst > lastOfSecond && lastOfFirst > lastOfThird) {
+// 		return firstList.pop()	
+// 	};
+// 	if (lastOfSecond > lastOfFirst && lastOfSecond > lastOfThird) {
+// 		return secondList.pop()
+// 	 };
+//     if (lastOfThird > lastOfFirst && lastOfThird > lastOfSecond)  {
+// 	    return thirdList.pop()
+// 	};
+// }
