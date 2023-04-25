@@ -75,10 +75,17 @@ const {firstName, surname, id, races} = data.response.data[athlete]
 let [first, second, third, fourth] = data.response.data[athlete].races[races.length-1].time
 let totalTimeCal = first + second + third + fourth;
 
+//Time in format 00:00
+const hours = Math.floor(totalTimeCal / 60);
+const minutes = totalTimeCal % 60;
+
+const time = `${hours}:${minutes}`
+console.log(time)
+
 //Date of races
 let date = data.response.data[athlete].races[races.length-1].date
 
-let dateFormat = (new Date(date).toLocaleDateString('en-GB'))
+let dateFormat = (new Date(date).toLocaleDateString('en-GB'))//date in format dd/mm/yyyy
 
 //Total Numbers of race
 let racesTotalCal =  races.length
@@ -111,7 +118,7 @@ eventDate.textContent = 'Event Date'
 getEventDate.textContent = dateFormat
 
 totalTime.textContent ='Total Time:'
-getTotalTime.textContent = totalTimeCal
+getTotalTime.textContent = time
 
 //Everything to be inside the dl element tag
 const list = document.createElement('dl')
