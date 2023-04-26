@@ -90,52 +90,23 @@ let dateFormat = (new Date(date).toLocaleDateString('en-GB'))//date in format dd
 //Total Numbers of race
 let racesTotalCal =  races.length
 
-//Create tags on HTML
-const heading = document.createElement('h2')
-
-const fullName = document.createElement('dt') //FullName
-const getName =document.createElement('dd')
-
-const totalRace = document.createElement('dt') //Total Races
-const getTotalRace = document.createElement('dd')
-
-const eventDate = document.createElement('dt') //Event Date
-const getEventDate = document.createElement('dd')
-
-const totalTime = document.createElement('dt') //Total time
-const getTotalTime = document.createElement('dd')
- 
-//Fill tagd with Information
-heading.textContent = id
-
-fullName.textContent = 'Athlete:'
-getName.textContent = `${firstName} ${surname}`
-
-totalRace.textContent = 'Total Race:'
-getTotalRace.textContent = racesTotalCal
-
-eventDate.textContent = 'Event Date'
-getEventDate.textContent = dateFormat
-
-totalTime.textContent ='Total Time:'
-getTotalTime.textContent = time
-
-//Everything to be inside the dl element tag
 const list = document.createElement('dl')
 
-list.appendChild(heading)
+//Method 1/Shorter method
+list.innerHTML = /*html*/` 
+<h2>${athlete}</h2>
+<dt>Athlete</dt>
+<dd>${firstName} ${surname}</dd>
 
-list.appendChild(fullName)
-list.appendChild(getName)
+<dt>Total Races</dt>
+<dd>${races.length}</dd>
 
-list.appendChild(totalRace)
-list.appendChild(getTotalRace)
+<dt>Event Date</dt>
+<dd>${dateFormat}</dd>
 
-list.appendChild(eventDate)
-list.appendChild(getEventDate)
-
-list.appendChild(totalTime)
-list.appendChild(getTotalTime)
+<dt>Total Time</dt>
+<dd>${time}</dd>
+ `;
 
 //Store the data in list in Fragment before passing it to HTML
 const fragData = document.createDocumentFragment()
@@ -154,3 +125,57 @@ const AthleteSV782 = document.querySelector('[data-athlete="SV782"')
 
 AthleteNM372.appendChild(dataNM372)
 AthleteSV782.appendChild(dataSV782)
+
+//Method 2
+/**
+ * Longer method.You can replace line 95 - line 108 with this code and it will still work.
+ * From list.innerHTML to `;
+ */
+
+
+// //Create tags on HTML
+// const heading = document.createElement('h2')
+
+// const fullName = document.createElement('dt') //FullName
+// const getName =document.createElement('dd')
+
+// const totalRace = document.createElement('dt') //Total Races
+// const getTotalRace = document.createElement('dd')
+
+// const eventDate = document.createElement('dt') //Event Date
+// const getEventDate = document.createElement('dd')
+
+// const totalTime = document.createElement('dt') //Total time
+// const getTotalTime = document.createElement('dd')
+ 
+// //Fill tags with Information
+// heading.textContent = id
+
+// fullName.textContent = 'Athlete:'
+// getName.textContent = `${firstName} ${surname}`
+
+// totalRace.textContent = 'Total Race:'
+// getTotalRace.textContent = racesTotalCal
+
+// eventDate.textContent = 'Event Date'
+// getEventDate.textContent = dateFormat
+
+// totalTime.textContent ='Total Time:'
+// getTotalTime.textContent = time
+
+// //Everything to be inside the dl element tag
+// const list = document.createElement('dl')
+
+// list.appendChild(heading)
+
+// list.appendChild(fullName)
+// list.appendChild(getName)
+
+// list.appendChild(totalRace)
+// list.appendChild(getTotalRace)
+
+// list.appendChild(eventDate)
+// list.appendChild(getEventDate)
+
+// list.appendChild(totalTime)
+// list.appendChild(getTotalTime)
