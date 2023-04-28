@@ -33,11 +33,9 @@ const createData = () => {
 const current = new Date() //Today's day
 current.setDate(1)
 
-// const startDay = current.getDate() //first day of the month = 1
 const firstDay = new Date(current.getFullYear(), current.getMonth(), 1);
 const startDay = firstDay.getDay()
-const daysInMonth = getDaysInMonth(current) //numbers of day in a month= 30
-const daysInCalendar = daysInMonth
+const daysInMonth = getDaysInMonth(current) //numbers of day in a 
 
 const weeks = createArray(6) //no of weeks
 const days = createArray(7) //days in a week
@@ -63,23 +61,25 @@ for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
 }
 return weeks
 }
-console.log(createData())
+//console.log(createData())
 
 const addCell = (existing, classString, value) => {
-    return    `<td> ${classString}  ${value}</td>`
+    return   result = /*html*/
+     `<td ${classString}> ${value}</td>`
 }
 
 const createHtml = (data) => {
     let result = ''
 
-    for (i = 0; i < data.length; i++) {
+   
+    for ( let week = 0; week < data ; week++) {
         let inner = addCell('table__cell table__cell_sidebar', 'Week {week}')
     
-        for (dayOfWeek, value in days) {
+        for (const day in week ) {
             let classString = table__cell
-			const isToday = new Date() === value
+			const isToday = new Date() === new Date(current.getFullYear)
             const isWeekend = dayOfWeek === 1 && dayOfWeek === 7
-            const isAlternate = Math.floor(weeks/2)
+            const isAlternate = Math.floor(week/2)
 
 			if (isToday) classString = `${classString} table__cell_today`
             if (isWeekend) classString === `${classString} table__cell_weekend`
@@ -89,8 +89,9 @@ const createHtml = (data) => {
 
         result = `<tr>${inner}</tr>`
     }
+    return result
 }
-
+console.log(createHtml())
 // Only edit above
 
 const current = new Date()
