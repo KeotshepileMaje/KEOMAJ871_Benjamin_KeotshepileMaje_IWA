@@ -67,118 +67,78 @@ html.add.cancel.addEventListener('click', handleAddToggleCancel)
 
 //Submit and add the order.
 
-const addDataForm = html.add.form
-const displayElement = document.querySelector('[data-column="ordered"]')
-
-
 const handleAddSubmit = (event) => {
   event.preventDefault();
 
 const order = { 
   title: html.add.title.value,
   table: html.add.table.value,
-  
 }
 
 let orderData = createOrderData(order)
 console.log(orderData)
-//html.add.overlay.style.display = ''
 const orderDetails = createOrderHtml(orderData)
 console.log(orderDetails)
-const customerOrder = html.other.grid.querySelector('[data-column="ordered"')
-console.log(customerOrder)
+const displayOrder = html.other.grid.querySelector('[data-column="ordered"')
+console.log(displayOrder)
 html.add.form.reset()
 
-const formData = new FormData(addDataForm);
-
-fetch("url/to/send/form/data", {
-  method: "POST",
-  body: formData
-}).then(response => response.text())
-.then(data => {
-  displayElement.innerHTML = orderDetails.innerHTML;
-})
-return fetch
+displayOrder.innerHTML = orderDetails.innerHTML
+addOverlay.close()
 }
 html.add.form.addEventListener('submit', handleAddSubmit)
 
-//When add is clicked
-const addButton = document.getElementsByClassName('button_primary')
-const handleAddToggleAdd = () => {
-    addOverlay.close()
+//Edit order pop up
+const dataEditOverlay = html.edit.overlay
+const handleEditToggle = (event) => {
+  dataEditOverlay.show()
+}
+html.other.grid.addEventListener('click', handleEditToggle)
+
+const handleEditCancel = (event) => {
+  dataEditOverlay.close()
+}
+html.edit.cancel.addEventListener('click', handleEditCancel)
+
+//Edit order
+const handleEditSubmit = (event) => {
+  event.preventDefault();
+
+  const orderEdit = { 
+    title: html.edit.title.value,
+    table: html.edit.table.value,
+  }
+  
+  let orderDataEdit = createOrderData(orderEdit)
+  console.log(orderDataEdit)
+  const orderDetailsEdit = createOrderHtml(orderDataEdit)
+  console.log(orderDetailsEdit)
+  const displayOrderEdit = html.other.grid.querySelector('[data-column="ordered"')
+  console.log(displayOrderEdit)
+  
+  displayOrderEdit.innerHTML = orderDetailsEdit.innerHTML
+  dataEditOverlay.close()
+  
+}
+html.edit.form.addEventListener('submit', handleEditSubmit)
+
+
+//Delete the order
+const handleDelete = (event) => {
+
+  dataEditOverlay.close()
 }
 
-addButton.addEventListener('click', handleAddToggleAdd)
+html.edit.delete.addEventListener('click', handleDelete)
 
 
 
 
+for (const htmlColumn of Object.values(html.columns)) {
+    htmlColumn.addEventListener('dragstart', handleDragStart)
+    htmlColumn.addEventListener('dragend', handleDragEnd)
+}
 
-
-
-
-
-//---------------------------
-
-
-// addDataForm.addEventListener("submit", function(event) {
-//   event.preventDefault();
-
-//   const formData = new FormData(form);
-
-//   fetch("url/to/send/form/data", {
-//     method: "POST",
-//     body: formData
-//   }).then(response => response.text())
-//   .then(data => {
-//     displayElement.innerHTML = `
-//       <div class="order__title" data-order-title>aaa</div>        
-//       <dl class="order__details">
-//           <div class="order__row">
-//               <dt>Table:</dt>
-//               <dd class="order__value" data-order-table>bbb</dd>
-//           </div>
-
-//           <div class="order__row">
-//               <dt>Ordered:</dt>
-//               <dd class="order__value">ccccc</dd>
-//           </div>
-//       </dl>
-//     `;
-//   })
-  
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const handleEditToggle = (event) => {}
-// const handleEditSubmit = (event) => {}
-// const handleDelete = (event) => {}
-
-
-// html.other.grid.addEventListener('click', handleEditToggle)
-// html.edit.cancel.addEventListener('click', handleEditToggle)
-// html.edit.form.addEventListener('submit', handleEditSubmit)
-// html.edit.delete.addEventListener('click', handleDelete)
-
-
-// for (const htmlColumn of Object.values(html.columns)) {
-//     htmlColumn.addEventListener('dragstart', handleDragStart)
-//     htmlColumn.addEventListener('dragend', handleDragEnd)
-// }
-
-// for (const htmlArea of Object.values(html.area)) {
-//     htmlArea.addEventListener('dragover', handleDragOver)
-// }
+for (const htmlArea of Object.values(html.area)) {
+    htmlArea.addEventListener('dragover', handleDragOver)
+}
