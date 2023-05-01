@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="./scripts.js" defer type="module"></script>
   </head>
-
+<!-- Dialog 1: HELP ? -->
   <body>
     <header class="actions">
       <h1 class="sr-only">Kitchen Express</h1>
       <div class="actions__inner">
-        <button class="button button_primary" data-add>Add Order</button>
+        <button class="button button_primary" data-add>Add Order</button><!--Add order-->
       </div>
     </header>
 
@@ -25,7 +25,7 @@
         <button class="button" type="button" data-help-cancel>Close</button>
       </div>
     </dialog>
-
+<!-- Dialog 2:Add  -->
     <dialog class="overlay" data-add-overlay>
       <div class="overlay__top">
         <h2 class="overlay__title">Add Order</h2>
@@ -44,11 +44,13 @@
 
       </form>
       <div class="overlay__row">
-        <button class="button" type="button" data-add-cancel>Cancel</button>
-        <button class="button button_primary" type="submit" form="add-form">Add</button>
+        <button class="button" type="button" data-add-cancel>Cancel</button><!--Cancel button-->
+        <button class="button button_primary" type="submit" form="add-form">Add</button><!--Add button-->
       </div>
     </dialog>
-
+<!-- Dialog 3:Edit
+   The one that adds the info on the Order, Preaparing, Serve 
+This is the information that pop into the screen when add Order is pressed  -->
     <dialog class="overlay" data-edit-overlay>
       <div class="overlay__top">
         <h2 class="overlay__title">Edit Order</h2>
@@ -84,7 +86,7 @@
         <button class="button button_primary" type="submit" form="edit-form">Update</button>
       </div>
     </dialog>
-
+<!-- The table that has Ordered, Preparing,  Served-->
     <h2 class="sr-only">Orders</h2>
 
     <div class="grid" data-grid>
